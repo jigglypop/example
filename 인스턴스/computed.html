@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="example">
+        금액 : <span>{{ amount }} 원</span>
+    </div>
+    <script type="text/javascript">
+        var twoway = new Vue({
+            el: '#test',
+            data:  { amt : 1234567 },
+            computed :{
+                amount :{
+                    get : () =>{
+                        let s = "" + this.amt
+                        let result = ''
+                        let num = 0
+                        for (let i = s.length - 1; i >= 0;i--){
+                            result = s[i] + result
+                            if (num % 3 === 2 && i !== 0){
+                                result = "," + result
+                            }
+                            num++
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

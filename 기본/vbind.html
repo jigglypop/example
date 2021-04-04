@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+
+
+<body>
+    <!-- <div id="simple">
+        <input id="a" type="text" v-bind:value="message">
+        <br/>
+        <img v-bind:src="imagePath"/>
+    </div> -->
+    <div id="simple">
+        <input id="a" type="text" :value="message">
+        <br/>
+        <img :src="imagePath"/>
+    </div>
+    <script type="text/javascript">
+        var model = {
+            message : 'v-bind 디렉티브',
+            imagePath : "http://sample.bmaster.kro.kr/photos/61.jpg"
+        }
+        var sample = new Vue({
+            el: '#simple',
+            data: model
+        })
+    </script>
+</body>
+
+</html>
